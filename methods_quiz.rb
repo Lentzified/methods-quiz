@@ -35,7 +35,7 @@ end
 
 def two_as_one?(a, b, c)
 
-	!(a + b = c) || !(b + c = a) || !(a + c = b) ? false
+	(a + b == c) || (b + c == a) || (a + c == b)
 
 end
 
@@ -43,6 +43,6 @@ end
 
 def pig_latinify(str)
 
-	str.downcase[0,1] == "a" || str.downcase[0,1] == "e" || str.downcase[0,1] == "i" || str.downcase[0,1] == "o" || str.downcase[0,1] == "u" ? str[1,-1] : false
-
+	(str.downcase.chr == "a" || str.downcase.chr == "e" || str.downcase.chr == "i" || str.downcase.chr == "o" || str.downcase.chr == "u" ? str.downcase + "way" : str.downcase.delete(str.downcase.chr) + str.downcase.chr + "ay")
+	
 end
